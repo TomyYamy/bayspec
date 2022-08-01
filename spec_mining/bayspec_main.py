@@ -20,10 +20,14 @@ def start_bayspec():
                                           min_percent_inter=0.8, max_percent_inter=0.8)
 
         tscbn = model_generator.new_tscbn()
+        #Tom memo: tscbn = Temporal state change BN
+        #Maybe it is mining graph in Fig.2
 
+        #Tom memo: 2.2 Minimum Average Path Search
         bn = MaxAverageMiningGraph(tscbn)
 
         paths = bn.path_computation(min_prob_threshold=0.85)
+        #Tom memo: It generates several path from start to terminal
 
         if paths:
             validation_bn = MaxAverageMiningGraph(model_generator.get_validation_model_rel(tscbn, 0.25))
