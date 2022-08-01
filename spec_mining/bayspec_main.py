@@ -36,7 +36,7 @@ def start_bayspec():
             specs = miner.start()
             end = time.time()
             print("Time %s"% str(end-start));avgs+=[end-start]
-            #print("{} found specifications".format(len(specs)))
-            #for spec in specs:
-            #    print(spec)
+            print("{} found specifications".format(len(specs)))
+            for spec in specs:
+                print(spec)
     print(np.mean(avgs))
